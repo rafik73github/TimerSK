@@ -35,7 +35,7 @@ public class ParseJSON {
         String modifiedDate= new SimpleDateFormat("yyyy-MM-dd").format(dateNow);
 
         JSONObject toSend = new JSONObject();
-        toSend.put("token",new Security().hashMeString("Rafaello73" + modifiedDate));
+        toSend.put("token",null));
 
         objectJSON = new JSONObject(hh.sendPost(URLS.URL_MEETINGS,toSend));
 

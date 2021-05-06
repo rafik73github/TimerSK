@@ -59,7 +59,8 @@ namespace TimerSK
                 DisplaySettings.SetButtonDisable(PlusButton);
                 DisplaySettings.SetButtonDisable(MinusButton);
                 DisplaySettings.SetButtonDisable(ForwardButton);
-             }
+                DisplaySettings.SetButtonDisable(ResetButton);
+            }
             else
             {
                 timerClock.Stop();
@@ -69,6 +70,7 @@ namespace TimerSK
                 DisplaySettings.SetButtonStart(PlusButton);
                 DisplaySettings.SetButtonStart(MinusButton);
                 DisplaySettings.SetButtonStart(ForwardButton);
+                DisplaySettings.SetButtonStart(ResetButton);
                 timerCountsDown = 0;
                 if (meetingListPosition != meetingListPositionLength - 1)
                 {
@@ -131,6 +133,7 @@ namespace TimerSK
                 DisplaySettings.SetButtonDisable(PlusButton);
                 DisplaySettings.SetButtonDisable(MinusButton);
                 DisplaySettings.SetButtonDisable(ForwardButton);
+                DisplaySettings.SetButtonDisable(ResetButton);
             }
             else
             {
@@ -182,8 +185,15 @@ namespace TimerSK
             BigDigits.Content = string.Format("{0}{1}:{2}{3}", zeroM, min, zeroS, sec);
         }
 
-
-
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            meetingListPosition = 0;
+            min = meetingList.GetMeetingList()[0].minT;
+            sec = meetingList.GetMeetingList()[0].secT;
+            pointName = meetingList.GetMeetingList()[0].pointName;
+            TitleLabel.Content = pointName;
+            ShowDigits();
+        }
     }
 }
 

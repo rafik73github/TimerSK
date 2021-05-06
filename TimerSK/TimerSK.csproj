@@ -146,5 +146,8 @@
   <ItemGroup>
     <Resource Include="timersala.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\reset.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
